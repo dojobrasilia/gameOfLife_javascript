@@ -1,0 +1,29 @@
+
+Vieram
+	- Bruno Pedroso
+	- Bruno Reis
+	- Bruno Rolim
+	- Karina
+	- Rodrigo Ramalho
+	- Rodrigo Ferreira
+	- Ale
+	- Fabs
+	
+	
+Começamos o game of life em javascript com JSpec.
+
+Retro:
+
+	:-)
+		- Muita gente
+		- Todo mundo programou
+		- Refletimos bastante em conjunto (qual o próximo teste?)
+		- JS
+		- Mantivemos o foco
+		
+	:-(
+		- Progredimos pouco o problema
+		- Estamos sempre recomeçando o problema
+		- Ficamos confusos
+		- Passo grande
+		- Tempo curto
