@@ -47,11 +47,29 @@ describe 'GameOfLife'
 	end
 	
 	describe 'rule of survivors'
-		it 'shouldnt kill 1.1 in the next generation if there is two neighbor'
+		it 'shouldnt kill 1.1 in the next generation if there is two neighbors (1.2 , 2.0)'
 			game = new GameOfLife(3,3)
 			game.setAlive(1,1)
 			game.setAlive(1,2)
 			game.setAlive(2,0)
+			game.next()
+			game.isAlive(1,1).should.be true
+		end
+		
+		it 'shouldnt kill 1.1 in the next generation if there is two neighbors (1.2 , 2.1)'
+			game = new GameOfLife(3,3)
+			game.setAlive(1,1)
+			game.setAlive(1,2)
+			game.setAlive(2,1)
+			game.next()
+			game.isAlive(1,1).should.be true
+		end
+		
+		it 'shouldnt kill 1.1 in the next generation if there is two neighbors (0.0 , 2.2)'
+			game = new GameOfLife(3,3)
+			game.setAlive(1,1)
+			game.setAlive(0,0)
+			game.setAlive(2,2)
 			game.next()
 			game.isAlive(1,1).should.be true
 		end
