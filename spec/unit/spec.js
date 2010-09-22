@@ -13,10 +13,19 @@ For a space that is 'empty' or 'unpopulated'
 describe 'GameOfLife'
 
 	describe 'configuration'
-		it 'should create a table that every cell is dead'
+		it 'should create a table that every cell is dead (3x3)'
 			game = new GameOfLife(3,3);
 			for(i=0; i<3; i++){
 				for(j=0; j<3; j++){
+					game.isAlive(i,j).should.be false
+				}
+			}
+		end
+		
+		it 'should create a table that every cell is dead (3x4)'
+			game = new GameOfLife(3,4);
+			for(i=0; i<3; i++){
+				for(j=0; j<4; j++){
 					game.isAlive(i,j).should.be false
 				}
 			}
@@ -43,6 +52,21 @@ describe 'GameOfLife'
 			game.setAlive(1,2)
 			game.next()
 			game.isAlive(1,1).should.be false
+		end
+		
+		it 'should kill 1.2 in the next generation if there is no neighbor'
+			game = new GameOfLife(3,4)
+			game.setAlive(1,2)
+			game.next()
+			game.isAlive(1,2).should.be false
+		end
+		
+		it 'should kill 1.2 in the next generation if there is one neighbor '
+			game = new GameOfLife(3,4)
+			game.setAlive(1,2)
+			game.setAlive(1,1)
+			game.next()
+			game.isAlive(1,2).should.be false
 		end
 	end
 	
@@ -73,8 +97,75 @@ describe 'GameOfLife'
 			game.next()
 			game.isAlive(1,1).should.be true
 		end
+		
+		it 'shouldnt kill 1.1 in the next generation if there is three neighbors (0.0 , 2.2, 1.0)'
+			game = new GameOfLife(3,3)
+			game.setAlive(1,1)
+			game.setAlive(0,0)
+			game.setAlive(1,0)			
+			game.setAlive(2,2)
+			game.next()
+			game.isAlive(1,1).should.be true
+		end
+		
+		it 'shouldnt kill 1.1 in the next generation if there is three neighbors (0.0 , 2.2, 0.2)'
+			game = new GameOfLife(3,3)
+			game.setAlive(1,1)
+			game.setAlive(0,0)
+			game.setAlive(0,2)			
+			game.setAlive(2,2)
+			game.next()
+			game.isAlive(1,1).should.be true
+		end
 	end 
 	
+	describe 'rule of super population'
+		it 'shouldnt kill 1.1 in the next generation if there is four neighbors (0.0 , 0.1, 0.2, 1.0)'
+			game = new GameOfLife(3,3)
+			game.setAlive(1,1)
+			game.setAlive(0,0)
+			game.setAlive(0,1)			
+			game.setAlive(0,2)
+			game.setAlive(1,0)
+			game.next()
+			game.isAlive(1,1).should.be false
+		end
+		
+		it 'shouldnt kill 1.1 in the next generation if there is all possible neighbors'
+			game = new GameOfLife(3,3)
+			game.setAlive(1,1)
+			game.setAlive(0,0)
+			game.setAlive(0,1)			
+			game.setAlive(0,2)
+			game.setAlive(1,0)
+			game.setAlive(1,2)
+			game.setAlive(2,0)
+			game.setAlive(2,1)
+			game.setAlive(2,2)
+			game.next()
+			game.isAlive(1,1).should.be false
+		end
+	end
+	
+	describe 'rule of ressurection'
+		it 'should ressurect 1.1 in the next generation if there is three neighbors (0.0 , 0.1, 0.2)'
+			game = new GameOfLife(3,3)
+			game.setAlive(0,0)
+			game.setAlive(0,1)			
+			game.setAlive(0,2)
+			game.next()
+			game.isAlive(1,1).should.be true
+		end
+		
+		it 'should ressurect 1.1 in the next generation if there is three neighbors (0.0 , 1.2, 2.1)'
+			game = new GameOfLife(3,3)
+			game.setAlive(0,0)
+			game.setAlive(1,2)			
+			game.setAlive(2,1)
+			game.next()
+			game.isAlive(1,1).should.be true
+		end
+	end
 	
 
 end
