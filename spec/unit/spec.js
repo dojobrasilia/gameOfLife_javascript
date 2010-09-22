@@ -167,5 +167,19 @@ describe 'GameOfLife'
 		end
 	end
 	
+	describe 'mixed rules'
+		it 'should blink'
+			game = new GameOfLife(5,5)
+			game.setAlive(2,1)
+			game.setAlive(2,2)			
+			game.setAlive(2,3)
+			game.next()
+			game.isAlive(1,2).should.be true
+			game.isAlive(2,2).should.be true
+			game.isAlive(3,2).should.be true
+			game.isAlive(2,1).should.be false
+			game.isAlive(2,3).should.be false
+		end
+	end 
 
 end
