@@ -46,3 +46,27 @@ Vieram
 	
 	Questões:
 		- Devemos ter dojos separados: Pra quem já é experiente e pra quem é iniciante.
+		
+29/09/2010
+
+Vieram
+	- Fabricio Buzeto
+	- Bruno Rolim
+	- Bruno Pedroso
+	- Marcelo Bassani
+	
+	=]
+		- Tivemos uma boa discussão no início.
+		- Tivemos uma pessoa nova.
+		- Aparentemente finalizamos as regras.
+	=[
+		- Como sempre, novatos não curtem programar.
+		- Tomate muito barulhento.
+		- Testes muito repetitivos.
+		- Testes não cobriram muitos cenários do problema.
+		
+	Questões:
+		- Nossos testes devem cobrir todos os casos?
+			- Isso seria um problema para outros tipos de teste?
+
+	Próximo Problema: Game of Life. Continuaremos com a Interface.
