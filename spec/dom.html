@@ -8,7 +8,12 @@
 		<script>
 			function runSuites() {
 				JSpec
-				.exec('unit/spec.js')
+				.exec('unit/configuration_spec.js')
+				.exec('unit/loneliness_rule_spec.js')
+				.exec('unit/mixed_rules_spec.js')
+				.exec('unit/ressurrection_rule_spec.js')
+				.exec('unit/superpopulation_rule_spec.js')
+				.exec('unit/survivors_rule_spec.js')
 				.run({ fixturePath: 'fixtures' })
 				.report()
 			}
