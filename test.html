@@ -1,0 +1,21 @@
+<html>
+	<head>
+		<link type="text/css" rel="stylesheet" href="./lib/jspec.css" />
+		<script src="lib/gameOfLife.js"></script>
+		<script src="lib/jquery.js"></script>
+		<script>
+			$(function(){
+				game = new GameOfLife(3,3,$('#happy_board'));	
+				game.setAlive(1,0);
+				game.setAlive(1,1);
+				game.setAlive(1,2);
+				
+				setInterval("game.next()",1000);
+				
+			});
+		</script>
+	</head>
+	<body class="jspec" onLoad="runSuites();">
+		<div id="happy_board"></div>
+	</body>
+</html>
