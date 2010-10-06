@@ -70,3 +70,37 @@ Vieram
 			- Isso seria um problema para outros tipos de teste?
 
 	Próximo Problema: Game of Life. Continuaremos com a Interface.
+	
+	
+06/10/2010
+
+	Participated:
+		- Bruno Pedroso
+		- Marcelo Bassani
+		- Fabrício Buzeto
+		- Sandra Teodora
+		
+	=]
+		- Everybody programmed;
+		- Sandra participated;
+		- We talked english;
+		- We made the interface blink \o/;
+		- We learned a better way to index the elements in JQuery;
+		- It was a very good session!!! (BPedroso)
+		
+	=[
+		- we need to refactor a lot; (tech debt)
+		- we programmed in a hurry;
+		- we did a "just-work" solution
+		- The whole interface is ugly.
+
+	Collected issues:
+	- JQuery indexes are 1-based and game's are 0-based;
+	- next method is not using setAlive/setDead, so we need to make another for in the next()
+
+
+	Next steps:
+		- Refactoring the code;
+		- make the interface any beatifull;
+		- DO NOT ADD FUNCTIONALITY!!!!!!!! (am i clear?)
+		
